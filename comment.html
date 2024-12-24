@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        
+        h1 {
+            color: #fff;
+            margin-top: 50px;
+            font-size: 2.5em;
+            margin-left: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            margin-left: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-left: 20px;
+        }
+        button:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+        .messages {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background: #fff;
+            text-align: left;
+            max-height: 400px;
+            overflow-y: scroll;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form
+        action="https://formspree.io/f/mrbbbqpl"
+        method="POST"
+    >
+        <h1>网站反馈表</h1>
+        <p>你对这个网站满意吗？请选择：</p>
+        <label>
+            <input type="radio" name="satisfaction" value="非常满意" required>
+            非常满意
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="satisfaction" value="满意">
+            满意
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="satisfaction" value="一般">
+            一般
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="satisfaction" value="不满意">
+            不满意
+        </label>
+        <br>
+        <p>请写下您的建议或反馈：</p>
+        <textarea
+            id="feedbackInput"
+            name="feedback"
+            placeholder="写下您的建议或反馈..."
+            required
+        ></textarea>
+        <br>
+        <button type="submit">提交反馈</button>
+    </form>
+    <div id="feedbackBoard" class="feedbacks">
+        <h3>其他用户的反馈：</h3>
+        <p>反馈将显示在这里。</p>
+    </div>
+    <button class="back-button" onclick="location.href='index.html'">退出</button>
+</body>
+
+
+</html>
